@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.helloworld" name="Hello World" version="0.0.1" provider-name="pkmd">
+	<requires>
+		<import addon="xbmc.python" version="2.0"/>
+		<import addon="script.module.simplejson" version="2.0.10"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<language/>
+		<summary>A simple Hello World</summary>
+		<description>Shows a simple Hello World</description>
+		<platform>all</platform>
+	</extension>
+</addon>
