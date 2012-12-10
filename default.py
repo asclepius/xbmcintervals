@@ -7,9 +7,9 @@ import os
 start = time.clock()
 
 WINDOW_FULLSCREEN_VIDEO = 12005
-IMAGE_PATH=xbmc.translatePath('special://home/addons/script.helloworld/chainring_big.png')
+IMAGE_PATH=xbmc.translatePath('special://home/addons/script.helloworld/bike_banner.png')
 HEART_PATH=xbmc.translatePath('special://home/addons/script.helloworld/heart.png')
-WORKOUT=xbmc.translatePath('special://home/addons/script.helloworld/aerobic_power_1')
+WORKOUT=xbmc.translatePath('special://home/addons/script.helloworld/downward_spiral')
 
 window = xbmcgui.Window(WINDOW_FULLSCREEN_VIDEO)
 
@@ -17,14 +17,15 @@ window.show()
 
 # Set up the labels
 #alert_label = xbmcgui.ControlLabel( window.getWidth()/2, window.getHeight()/2, 0, 0, 'Hello, world!', 'WeatherTemp', alignment=0x6 )
-timer_label = xbmcgui.ControlLabel( -150, 520, 500, 200, 'Timer', 'font30_title', alignment=0x6 )
-details_label = xbmcgui.ControlLabel( window.getWidth() - 100, 0, window.getWidth(), 200, '', 'font30_title', alignment=0x1)
-image = xbmcgui.ControlImage(0, 520, 200, 200, IMAGE_PATH)
+timer_label = xbmcgui.ControlLabel( window.getWidth() - 150, 0, 300, 100, 'Timer', 'font30_title', alignment=0x5)
+details_label = xbmcgui.ControlLabel( 100, 0, window.getWidth() - 300, 100, '', 'font30_title', alignment=0x4)
+image = xbmcgui.ControlImage(0, 0, 1500, 100, IMAGE_PATH)
 #heart = xbmcgui.ControlImage(0, 0, 50, 50, HEART_PATH)
 #heart_rate = xbmcgui.ControlLabel(0,0,100,50,'', 'font30_title', alignment=0x6)
 
 # Add the control to the FullScreenVideo window
 #alert_control = window.addControl(alert_label)
+#image.setAnimations([('visible', 'effect=fade time="500"',), ('hidden', 'effect=fade time="500"',)])
 image_control = window.addControl(image)
 #heart_control = window.addControl(heart)
 #heart_rate_control =window.addControl(heart_rate)
@@ -35,10 +36,9 @@ details_control = window.addControl(details_label)
 for line in open(WORKOUT):
   line_split = line.split()
   interval_time = float(line_split[0])
-  min_hr = line_split[1]
-  max_hr = line_split[2]
-  hr_zone = "(%s - %s)" % (min_hr, max_hr)
-  details = ' '.join(line_split[3:])
+  rpe = line_split[1]
+  hr_zone = "(RPE %s)" % (rpe)
+  details = ' '.join(line_split[2:])
   details_label.setLabel(details + ' ' + hr_zone)
   #heart_rate.setLabel(hr_zone)
   start = time.time()
