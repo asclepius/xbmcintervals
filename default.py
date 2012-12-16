@@ -9,7 +9,7 @@ start = time.clock()
 WINDOW_FULLSCREEN_VIDEO = 12005
 IMAGE_PATH=xbmc.translatePath('special://home/addons/script.helloworld/bike_banner.png')
 HEART_PATH=xbmc.translatePath('special://home/addons/script.helloworld/heart.png')
-WORKOUT=xbmc.translatePath('special://home/addons/script.helloworld/downward_spiral')
+WORKOUT=xbmc.translatePath('special://home/addons/script.helloworld/angels')
 
 window = xbmcgui.Window(WINDOW_FULLSCREEN_VIDEO)
 
@@ -17,7 +17,7 @@ window.show()
 
 # Set up the labels
 #alert_label = xbmcgui.ControlLabel( window.getWidth()/2, window.getHeight()/2, 0, 0, 'Hello, world!', 'WeatherTemp', alignment=0x6 )
-timer_label = xbmcgui.ControlLabel( window.getWidth() - 150, 0, 300, 100, 'Timer', 'font30_title', alignment=0x5)
+timer_label = xbmcgui.ControlLabel( window.getWidth() - 50, 0, 300, 100, 'Timer', 'font30_title', alignment=0x5)
 details_label = xbmcgui.ControlLabel( 100, 0, window.getWidth() - 300, 100, '', 'font30_title', alignment=0x4)
 image = xbmcgui.ControlImage(0, 0, 1500, 100, IMAGE_PATH)
 #heart = xbmcgui.ControlImage(0, 0, 50, 50, HEART_PATH)
