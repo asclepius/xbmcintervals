@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.helloworld" name="Hello World" version="0.0.1" provider-name="pkmd">
+<addon id="script.intervaltrainer" name="Hello World" version="0.0.1" provider-name="pkmd">
 	<requires>
 		<import addon="xbmc.python" version="2.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
@@ -9,8 +9,8 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<language/>
-		<summary>A simple Hello World</summary>
-		<description>Shows a simple Hello World</description>
+		<summary>A simple interval training script for indoor cycling</summary>
+		<description>Runs workouts located in the workout subdirectory of this script, add your own.  WILL NOT RUN LONGER THAN A SINGLE PROGRAM.  Needs some work.</description>
 		<platform>all</platform>
 	</extension>
 </addon>

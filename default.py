@@ -16,7 +16,6 @@ workout_file=open(WORKOUT)
 
 window = xbmcgui.Window(WINDOW_FULLSCREEN_VIDEO)
 
-window.show()
 
 # Set up the labels
 timer_label = xbmcgui.ControlLabel( window.getWidth() - 50, 0, 300, 100, 'Timer', 'font30_title', alignment=0x5)
@@ -24,8 +23,12 @@ details_label = xbmcgui.ControlLabel( 100, 0, window.getWidth() - 300, 100, '', 
 image = xbmcgui.ControlImage(0, 0, 1500, 100, IMAGE_PATH)
 
 # Add the control to the FullScreenVideo window
-#image.setAnimations([('VisibleChange', 'effect=fade time="1000"',)])
+#image.setAnimations([('Visible', 'effect=fade time="1000"')])
+
+window.show()
 window.addControl(image)
+#image.setAnimations([('visible', 'effect=fade start=0 end=100 time=500'), ('hidden', 'effect=fade start=0 end=100 time=500',)])
+#image.setAnimations([('Conditional', 'effect=fade time=500 condition=Control.IsVisible(%d)' % image.getId()),('Conditional', 'effect=fade time=500 condition="!Control.IsVisible(%d)"' % image.getId())])
 window.addControl(timer_label)
 window.addControl(details_label)
 
@@ -45,6 +48,7 @@ if xbmc.Player().isPlayingVideo():
         timer_label.setLabel(timer)
         now = time.time()
         time.sleep(1)
+
 
 if xbmc.Player().isPlayingVideo():
   window.removeControl(timer_label)
