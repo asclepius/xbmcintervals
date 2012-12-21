@@ -49,11 +49,12 @@ if xbmc.Player().isPlayingVideo():
         now = time.time()
         time.sleep(1)
 
-
-if xbmc.Player().isPlayingVideo():
+try:
   window.removeControl(timer_label)
   window.removeControl(image)
   #window.removeControl(progress)
   window.removeControl(details_label)
+except:
+  None
 
 
