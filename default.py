@@ -8,10 +8,10 @@ start = time.clock()
 
 WINDOW_FULLSCREEN_VIDEO = 12005
 WINDOW_OSD = 12901
-IMAGE_PATH=xbmc.translatePath('special://home/addons/script.helloworld/bike_banner.png')
+IMAGE_PATH=xbmc.translatePath('special://home/addons/script.intervaltrainer/bike_banner.png')
 
 dialog = xbmcgui.Dialog()
-WORKOUT=xbmc.translatePath(dialog.browse(1,'Workout selection','files','',False,False,'special://home/addons/script.helloworld/workouts/test'))
+WORKOUT=xbmc.translatePath(dialog.browse(1,'Workout selection','files','',False,False,'special://home/addons/script.intervaltrainer/workouts/test'))
 workout_file=open(WORKOUT)
 
 window = xbmcgui.Window(WINDOW_FULLSCREEN_VIDEO)
